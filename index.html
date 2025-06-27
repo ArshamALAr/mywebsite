@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>آلاسکا سیتی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700;900&display=swap');
+    * { margin: 0; padding: 0; box-sizing: border-box }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: #0a0f25;
+      color: #e0e7ff;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* افکت کلیک */
+    .click-effect {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(circle at var(--x) var(--y), rgba(128,191,255,0.3) 0%, transparent 60%);
+      animation: fadeOut 0.6s ease-out forwards;
+      z-index: 9999;
+    }
+    @keyframes fadeOut { to { opacity: 0; } }
+
+    /* دنباله موس */
+    .ice-trail {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, rgba(128,191,255,0.2), rgba(0,128,255,0));
+      border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+      pointer-events: none;
+      z-index: 9999;
+      animation: iceFade 0.8s ease-out forwards;
+      filter: blur(2px);
+    }
+    @keyframes iceFade {
+      0% { opacity: 1; transform: scale(1); }
+      100% { opacity: 0; transform: scale(2); }
+    }
+
+    header {
+      background: #131a3f;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: 900;
+      color: #ccff00;
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    nav a {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: 0.3s;
+      padding: 8px 14px;
+    }
+    nav a:hover, nav a.active {
+      color: #ccff00;
+    }
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+      margin-left: 15px;
+    }
+    .header-buttons a {
+      background: #ccff00;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .header-buttons a:hover {
+      background: #d8ff33;
+    }
+
+    section {
+      margin: 50px auto;
+      max-width: 1000px;
+      padding: 40px;
+      background: #131a3f;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #00000077;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeIn 1s forwards;
+      display: none;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 { font-size: 24px; color: #80bfff; margin-bottom: 20px; }
+    p, ul { font-size: 17px; line-height: 1.7; }
+    ul li { margin-bottom: 5px; }
+    .btn {
+      background: #80bfff;
+      color: #0a0f25;
+      padding: 12px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+    .btn:hover { background: #99ccff; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">آلاسکا سیتی</div>
+  <nav>
+    <a href="#home" class="active">خانه</a>
+    <a href="#game-modes">سرورها</a>
+    <a href="#about-us">درباره ما</a>
+    <a href="#shop">فروشگاه</a>
+  </nav>
+  <div class="header-buttons">
+    <a href="#">دیسکورد</a>
+  </div>
+</header>
+
+<section id="home">
+  <h2>به آلاسکا سیتی خوش آمدید</h2>
+  <p>سرور حرفه‌ای Minecraft با پشتیبانی نسخه‌های 1.8 تا 1.21، گیم‌مودهای متنوع و جامعه‌ای سرزنده و فعال.</p>
+</section>
+
+<section id="game-modes">
+  <h2>سرورها و حالت‌های بازی</h2>
+  <ul>
+    <li>• Survival</li>
+    <li>• RolePlay</li>
+    <li>• SkyMine</li>
+    <li>• BedWars</li>
+    <li>• Arcade</li>
+    <li>• Practice</li>
+    <li>• Parkour</li>
+  </ul>
+</section>
+
+<section id="about-us">
+  <h2>درباره ما</h2>
+  <p>
+    آلاسکا سیتی یک سرور فارسی با کیفیت بالا، مودهای جذاب، تیم حرفه‌ای و جامعه‌ای صمیمی است. تجربه‌ای حرفه‌ای برای ماینکرفت‌بازان واقعی!
+  </p>
+</section>
+
+<section id="shop">
+  <h2>فروشگاه</h2>
+  <p>
+    • خرید رنک‌های متنوع<br>
+    • آیتم‌های اختصاصی داخل بازی<br>
+    • پرداخت امن و آنلاین
+  </p>
+  <a href="#" class="btn">رفتن به فروشگاه</a>
+</section>
+
+<script>
+  // افکت کلیک
+  document.body.addEventListener('click', function(e) {
+    let effect = document.createElement('div');
+    effect.className = 'click-effect';
+    effect.style.setProperty('--x', e.clientX + 'px');
+    effect.style.setProperty('--y', e.clientY + 'px');
+    document.body.appendChild(effect);
+    setTimeout(() => effect.remove(), 700);
+  });
+  // دنباله موس
+  document.addEventListener("mousemove", function(e) {
+    const ice = document.createElement("span");
+    ice.className = "ice-trail";
+    ice.style.left = e.clientX + "px";
+    ice.style.top = e.clientY + "px";
+    document.body.appendChild(ice);
+    setTimeout(() => ice.remove(), 800);
+  });
+  // منو
+  document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').replace('#', '');
+      document.querySelectorAll('section').forEach(sec => sec.style.display = 'none');
+      document.getElementById(targetId).style.display = 'block';
+      document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('home').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
